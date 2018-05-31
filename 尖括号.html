@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+    ol,ul,li{margin:0;padding:0;list-style:none;}
+    img{border:none;vertical-align:top;}
+    #box {
+      position: relative;
+      width: 300px;
+      height: 1000px;
+      margin: 0 auto;
+      border:1px solid red;
+    }
+    #box > div{
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      line-height: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div></div>
+  </div>
+</body>
+<script>
+  var box = document.getElementById("box");
+  var str = "";
+  for(var i=1;i<12;i++){
+      if (i<=6){
+          str+="<div style='top:"+(i-1)*50+"px;left:"+(i-1)*50+"px"+"'>"+i+"</div>";
+      }else{
+          str +="<div style='top:"+(i-1)*50+"px;left:"+(11-i)*50+"px"+"'>"+i+"</div>";
+      }
+
+  }
+  box.innerHTML = str;
+</script>
+</html>

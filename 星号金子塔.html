@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+    ol,ul,li{margin:0;padding:0;list-style:none;}
+    img{border:none;vertical-align:top;}
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+</body>
+<script>
+  var box = document.getElementById("box");
+  var str = "";
+  for(var i= 0;i<4;i++){
+      if(i<3){
+          str +="&nbsp;";
+      }else{
+          str+="*";
+      }
+  }
+  str +="</br>";
+  console.log(str);
+  for(var i=0;i<5;i++){
+      if(i<2){
+          str+="&nbsp;";
+      }else{
+          str+="*";
+      }
+  }
+  str +="</br>";
+  for(var i=0;i<6;i++){
+      if(i<1){
+          str+="&nbsp;";
+      }else{
+          str+="*";
+      }
+  }
+  str +="</br>";
+  for(var i=0;i<7;i++){
+      if(i<0){
+          str+="&nbsp;";
+      }else{
+          str+="*";
+      }
+  }
+  str +="</br>";
+  box.innerHTML = str;
+
+</script>
+</html>

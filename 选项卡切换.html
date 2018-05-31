@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+    ol,ul,li{margin:0;padding:0;list-style:none;}
+    img{border:none;vertical-align:top;}
+    #wrap{
+      width: 200px;
+      border: 1px solid #000;
+    }
+    #wrap ul{
+      height: 40px;
+      overflow: hidden;
+    }
+    #wrap li.c-b85cff{
+      background-color: #b85cff;
+      color: #fff;
+      font-size: 20px;
+    }
+    #wrap li{
+      height: 40px;
+      line-height: 40px;
+      text-indent:5px;
+    }
+    .bor-t-3{
+      border-top: 3px solid #000000;
+    }
+    .bor-bottom{
+      border-bottom: 1px dashed #000000;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <ul id="box1">
+      <li class="c-b85cff">同事</li>
+      <li class="bor-bottom">千寻</li>
+      <li class="bor-bottom">千凡</li>
+      <li class="bor-bottom">阿飞</li>
+      <li>追梦</li>
+    </ul>
+    <ul id="box2" class="bor-t-3">
+      <li class="c-b85cff">好友</li>
+      <li class="bor-bottom">梅梅</li>
+      <li class="bor-bottom">甜甜</li>
+      <li>波波</li>
+    </ul>
+    <ul id="box3" class="bor-t-3">
+      <li class="c-b85cff">VIP学员</li>
+      <li class="bor-bottom">一米阳光</li>
+      <li class="bor-bottom">小风车</li>
+      <li>小米</li>
+    </ul>
+  </div>
+</body>
+<script>
+  // var box1 = document.getElementById("box1");
+  // var box2 = document.getElementById("box2");
+  // var box3 = document.getElementById("box3");
+  var box = document.getElementsByTagName("ul");
+  // box1.onclick = function () {
+  //     box1.style.height = "160px";
+  //     box2.style.height = "40px";
+  //     box3.style.height = "40px";
+  // }
+  // box2.onclick = function () {
+  //     box2.style.height = "120px";
+  //     box1.style.height = "40px";
+  //     box3.style.height = "40px";
+  // }
+  // box3.onclick = function () {
+  //     box3.style.height = "120px";
+  //     box1.style.height = "40px";
+  //     box2.style.height = "40px";
+  // }
+  for (var i = 0; i<3;i++){
+      box[i].index = i;
+      if(i<1){
+          box[i].onclick = function () {
+              box[this.index].style.height = "160px";
+              box[this.index+1].style.height = "40px";
+              box[this.index+2].style.height = "40px";
+          }
+      }else{
+          box[i].onclick = function () {
+              box[this.index].style.height = "120px";
+              box[3-this.index].style.height = "40px";
+              box[this.index-this.index].style.height = "40px";
+          }
+      }
+  }
+</script>
+</html>

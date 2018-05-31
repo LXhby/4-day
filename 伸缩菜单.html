@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+    ol,ul,li{margin:0;padding:0;list-style:none;}
+    img{border:none;vertical-align:top;}
+    ul{
+      width: 250px;
+    }
+    li{
+      width: 250px;
+      height: 35px;
+      overflow: hidden;
+      border: 1px solid;
+      line-height: 35px;
+      text-align: center;
+    }
+    h3{
+      height: 35px;
+      background-color: #3a50ff;
+      color: #000;
+      font-size: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    p{
+      border-bottom: 1px dashed;
+    }
+  </style>
+<body>
+</head>
+  <div id="box">
+    <li>
+      <h3>吃滴</h3>
+      <p>肉</p>
+      <p>牛肉</p>
+      <p>羊肉</p>
+      <p>蔬菜</p>
+    </li>
+    <li>
+      <h3>穿的</h3>
+      <p>鞋子</p>
+      <p>袜子</p>
+      <p>裤子</p>
+      <p>帽子</p>
+    </li>
+    <li>
+      <h3>玩的</h3>
+      <p>ps4</p>
+      <p>switch</p>
+      <p>3ds</p>
+      <p>psv</p>
+      <p>xbox</p>
+    </li>
+    </ul>
+  </div>
+</body>
+<script>
+  var oLis = document.getElementsByTagName("li");
+  var oH3 = document.getElementsByTagName("h3");
+  var bool = true;
+  for (var i=0;i<3;i++){
+      oH3[i].index = i;
+      oH3[i].bool = true;
+      oH3[i].onclick = function () {
+          if(this.bool){
+              for (var j=0;j<3;j++){
+                  oLis[j].style.height = "35px";
+                  oH3[j].bool = true;
+              }
+              oLis[this.index].style.height = "auto";
+              var op = oLis[this.index].getElementsByTagName("p");
+              for (k=0;k<op.length;k++){
+                  op[k].onmouseenter = function () {
+                      this.style.backgroundColor = "red";
+                  }
+                  op[k].onmouseleave = function () {
+                      this.style.backgroundColor = "white";
+                  }
+              }
+              this.bool = false;
+          }else{
+              oLis[this.index].style.height = "35px";
+              this.bool = true;
+          }
+      }
+  }
+</script>
+</html>
